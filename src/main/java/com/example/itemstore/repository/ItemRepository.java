@@ -4,6 +4,7 @@ import com.itemstore.store.Item;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Repository
 public class ItemRepository {
@@ -35,7 +36,7 @@ public class ItemRepository {
     }
 
     public List<Item> findAllItems() {
-        return (List<Item>) itemStore.values();
+        return new ArrayList<Item>(itemStore.values());
     }
 
     public Item findItemById(long id) {

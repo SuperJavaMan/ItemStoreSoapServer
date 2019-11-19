@@ -29,36 +29,35 @@ public class ItemStoreEndpoint {
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "GetItemByIdRequest")
     @ResponsePayload
-    public GetItemByIdResponse getItemById(@RequestPayload long id) {
+    public GetItemByIdResponse getItemById(@RequestPayload GetItemByIdRequest request) {
         GetItemByIdResponse response = new GetItemByIdResponse();
-        response.setItem(repository.findItemById(id));
+        response.setItem(repository.findItemById(request.getId()));
         return response;
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "AddItemRequest")
     @ResponsePayload
-    public AddItemResponse addItem(@RequestPayload Item item) {
+    public AddItemResponse addItem(@RequestPayload AddItemRequest request) {
         AddItemResponse response = new AddItemResponse();
-        String message = repository.addItem(item);
+        String message = repository.addItem(request.getItem());
         response.setMessage(message);
         return response;
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "UpdateItemRequest")
     @ResponsePayload
-    public UpdateItemResponse updateItem(@RequestPayload long id,
-                                         @RequestPayload Item item) {
+    public UpdateItemResponse updateItem(@RequestPayload UpdateItemRequest request) {
         UpdateItemResponse response = new UpdateItemResponse();
-        String message = repository.updateItem(id, item);
+        String message = repository.updateItem(request.getItemId(), request.getItem());
         response.setMessage(message);
         return response;
     }
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "DeleteItemRequest")
     @ResponsePayload
-    public DeleteItemResponse deleteItem(@RequestPayload long id) {
+    public DeleteItemResponse deleteItem(@RequestPayload DeleteItemRequest request) {
         DeleteItemResponse response = new DeleteItemResponse();
-        String message = repository.deleteItem(id);
+        String message = repository.deleteItem(request.getItemId());
         response.setMessage(message);
         return response;
     }

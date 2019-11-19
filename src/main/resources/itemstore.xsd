@@ -35,7 +35,7 @@
      <xs:element name="GetItemByIdResponse">
          <xs:complexType>
              <xs:sequence>
-                 <xs:element name="Item" type="tns:item"/>
+                 <xs:element name="item" type="tns:item"/>
              </xs:sequence>
          </xs:complexType>
      </xs:element>
@@ -43,7 +43,7 @@
      <xs:element name="AddItemRequest">
          <xs:complexType>
              <xs:sequence>
-                 <xs:element name="Item" type="tns:item"/>
+                 <xs:element name="item" type="tns:item"/>
              </xs:sequence>
          </xs:complexType>
      </xs:element>
@@ -51,7 +51,7 @@
      <xs:element name="AddItemResponse">
          <xs:complexType>
              <xs:sequence>
-                 <xs:element name="Message" type="xs:string"/>
+                 <xs:element name="message" type="xs:string"/>
              </xs:sequence>
          </xs:complexType>
      </xs:element>
@@ -59,8 +59,8 @@
      <xs:element name="UpdateItemRequest">
          <xs:complexType>
              <xs:sequence>
-                 <xs:element name="ItemId" type="xs:long"/>
-                 <xs:element name="Item" type="tns:item"/>
+                 <xs:element name="itemId" type="xs:long"/>
+                 <xs:element name="item" type="tns:item"/>
              </xs:sequence>
          </xs:complexType>
      </xs:element>
@@ -68,7 +68,7 @@
      <xs:element name="UpdateItemResponse">
          <xs:complexType>
              <xs:sequence>
-                 <xs:element name="Message" type="xs:string"/>
+                 <xs:element name="message" type="xs:string"/>
              </xs:sequence>
          </xs:complexType>
      </xs:element>
@@ -76,7 +76,7 @@
      <xs:element name="DeleteItemRequest">
          <xs:complexType>
              <xs:sequence>
-                 <xs:element name="ItemId" type="xs:long"/>
+                 <xs:element name="itemId" type="xs:long"/>
              </xs:sequence>
          </xs:complexType>
      </xs:element>
@@ -84,7 +84,7 @@
      <xs:element name="DeleteItemResponse">
          <xs:complexType>
              <xs:sequence>
-                 <xs:element name="Message" type="xs:string"/>
+                 <xs:element name="message" type="xs:string"/>
              </xs:sequence>
          </xs:complexType>
      </xs:element>
